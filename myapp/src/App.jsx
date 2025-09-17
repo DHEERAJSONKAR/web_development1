@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Component from './Component.jsx'
-import { ComponetB, ComponentC } from './Component.jsx'
+// import { ComponetB, ComponentC } from './Component.jsx'
 
 function App() {
 //   const elementA = ()=>{
@@ -21,13 +21,18 @@ function App() {
 //     )
 //   }
 // let num = 1;
-  return (
+let username = "coding hunger"  
+return (
     <>
       {/* {num%2===0?elementA():elementB()} */}
-      <h1>welcome guys</h1> 
-      <Component/>
-      <ComponetB/>
-      <ComponentC/>
+      {/* <h1>welcome guys</h1>  */}
+      
+      <Component username={"coding lover"} roll = {"24mca045"}/>
+      <Component username={"coding enthusiast"} roll = {"24mca045"}/>
+      <Component username={"coding hunger"} roll = {"24mca045"}/>
+      {/* <ComponetB/>
+
+      <ComponentC/> */}
     </>
   )
 }
