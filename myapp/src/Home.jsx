@@ -1,16 +1,12 @@
 import React from 'react'
-import Model from './Model'
-import Button from './Button'
-
-const Home = ({data=0,name="anjali"}) => {
-  let a =56+ data;
+import styles from './Home.module.css'
+const Home = () => {
   return (
-    <div>
-      <h1>this is home page = {data} and name={name} with a value={a}</h1>
-      
+    <div className={styles.header}>
+      Welcome to home page
     </div>
   )
 }
 
-
 export default Home
+
