@@ -4,70 +4,76 @@ import Home from './Home'
 import dkphoto from '../src/assets/dkphoto.jpeg'
 import react from '../src/assets/react.svg'
 import style from './App.module.css'
+import HomePage from './component/HomePage'
+import Navbar from './component/Navbar'
+
 
 
 
 function App() {
-  const handleClickFunction=(e)=>{
-    console.log(e)
-  }
-  const handleonChangeFunc=(e)=>{
-    console.log(e.target.name)
-  }
-  const handleSubmit=(e,val)=>{
-    e.preventDefault();
-    console.log(val)
-  }
-  var isLogin = false;
-  const checkLogin = ()=>{
-    if(isLogin){
-      return<h2>welcome user</h2>
-    }else{
-      return<h2>welcome guest
+  // const handleClickFunction=(e)=>{
+  //   console.log(e)
+  // }
+  // const handleonChangeFunc=(e)=>{
+  //   console.log(e.target.name)
+  // }
+  // const handleSubmit=(e,val)=>{
+  //   e.preventDefault();
+  //   console.log(val)
+  // }
+  // var isLogin = false;
+  // const checkLogin = ()=>{
+  //   if(isLogin){
+  //     return<h2>welcome user</h2>
+  //   }else{
+  //     return<h2>welcome guest
 
-      </h2>
-    }
-  }
-  var listOfData = ["Apple","Banana","Mango","Orange","Papaya","Guava"]
+  //     </h2>
+  //   }
+  // }
+  // var listOfData = ["Apple","Banana","Mango","Orange","Papaya","Guava"]
 
-  const [name, setName] = useState({
-    name:"",
-    email:"",
-    password:"",
-    phone:""
+  // const [name, setName] = useState({
+  //   name:"",
+  //   email:"",
+  //   password:"",
+  //   phone:""
 
-  });
+  // });
   
-  const handleChange=(e,key)=>{
-    setName({...name,[key]:e.target.value})
+  // const handleChange=(e,key)=>{
+  //   setName({...name,[key]:e.target.value})
 
-  }
+  // }
 
  
-  const list = [
-    {
-      product: "Mobile",
-      price: 100000,
-      quantity:20
-    },
-    {
-      product: "Laptop",
-      price: 50000,
-      quantity:10
-    },
-    {
-      product: "Tablet",
-      price: 30000,
-      quantity:15
-    }
-  ]
+  // const list = [
+  //   {
+  //     product: "Mobile",
+  //     price: 100000,
+  //     quantity:20
+  //   },
+  //   {
+  //     product: "Laptop",
+  //     price: 50000,
+  //     quantity:10
+  //   },
+  //   {
+  //     product: "Tablet",
+  //     price: 30000,
+  //     quantity:15
+  //   }
+  // ]
+  const [searchText, setSearchText] = useState("");
   
  
 return (
     <>
+    <Navbar searchText={searchText} setSearchText={setSearchText}/>
+    <HomePage searchText={searchText}/>
 
     
-    <input type='text' placeholder='Enter your name' name="input field" onChange={handleonChangeFunc}width={600}/>
+    {/* <input type='text' placeholder='Enter your name' name="input field" onChange={handleonChangeFunc}width={600}/>
     <img src ={dkphoto} className={style.imageStyle} />
   <div className='header' id='header1'>App Component</div>
   <img src={react} width={100} />
@@ -126,7 +132,7 @@ return (
         <br/>
       <label htmlFor='phone'>Phone.No:-</label>
       <input value={name.phone} onChange= {(e)=>handleChange(e, 'phone')} placeholder='Enter Your phone number' id="phone" />
-     </form>
+     </form> */}
   
     </>
   ) 
