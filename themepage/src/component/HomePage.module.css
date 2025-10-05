@@ -1,0 +1,38 @@
+.homeLight{
+    background-color: wheat;
+    color: black;
+    padding: 60px;
+    height: 70.3vh;
+}
+.homeDark{
+    background-color: #a71515;
+    color: white;
+    padding: 60px;
+    height: 70.3vh;
+    
+}
+.welcome{
+        font-size: 32px;
+        font-weight: 700;
+    }
+.homeCards{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+}
+.lightCards{
+border-radius: 10px;
+    padding: 10px;
+    border: 1px solid ;
+    width: 250px;
+    background-color: bisque;
+}
+.darkCards{
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid ;
+    width: 250px;
+    background-color:rgb(159, 98, 23);
+    color: rgba(19, 7, 7, 0.67);
+}

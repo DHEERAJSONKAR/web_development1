@@ -1,0 +1,25 @@
+.navbarLight{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 60px;
+    color: black;
+    background-color: whitesmoke;
+}
+.navbarDark{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 60px;
+    color: white;
+    background-color: black;
+}
+.rightSide{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.switch{
+    width: 60px;
+    height: 34px;
+    position: relative;
+    display: inline-block;
+}
