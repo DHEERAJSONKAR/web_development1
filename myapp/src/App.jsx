@@ -1,16 +1,25 @@
 import './App.css'
-import React ,{useState}from 'react'
+import React ,{useState, useEffect, useRef, use}from 'react'
 import Home from './Home'
 import dkphoto from '../src/assets/dkphoto.jpeg'
 import react from '../src/assets/react.svg'
 import style from './App.module.css'
 import HomePage from './component/HomePage'
 import Navbar from './component/Navbar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Profile from './component/Profile'
+import NotFound from './component/NotFound'
+import ProfileDetail from './component/ProfileDetail'
+
 
 
 
 
 function App() {
+  // const [count, setCount] = useState(0);
+  // useEffect(()=>{
+  //   console.log(`api calling is happeninig ${count}`) 
+  // },[count])
   // const handleClickFunction=(e)=>{
   //   console.log(e)
   // }
@@ -64,13 +73,44 @@ function App() {
   //     quantity:15
   //   }
   // ]
-  const [searchText, setSearchText] = useState("");
+  // const [searchText, setSearchText] = useState("");
+  const inputRef = useRef();
+  const [count, setCount] = useState(0);
+  const prevCountRef = useRef();
+  useEffect(()=>{
+    prevCountRef.current = count;
+  },[count])
+  useEffect(()=>{
+    inputRef.current.focus();
+  },[])
+  const onClickButton=()=>{
+    const value = inputRef.current.value;
+    console.log(value)
+   
+  }
   
  
 return (
     <>
-    <Navbar searchText={searchText} setSearchText={setSearchText}/>
+    {/* <Navbar searchText={searchText} setSearchText={setSearchText}/>
     <HomePage searchText={searchText}/>
+    <p onClick={()=>setCount(prev=>prev+1)}>hi</p> */}
+    <Router>
+      <div>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<HomePage/>}/> 
+          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/profile/:userName' element={<ProfileDetail/>}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+      </div>
+    </Router>
+    <input ref={inputRef} placeholder='Enter your name' type='text'></input>
+    <button onClick={onClickButton}>send</button>
+    <div>Count: {count}</div>
+    <div>prevCount: {prevCountRef.current}</div>
+    <button onClick={()=>setCount(count+1)}>Increment</button>
 
     
     {/* <input type='text' placeholder='Enter your name' name="input field" onChange={handleonChangeFunc}width={600}/>
